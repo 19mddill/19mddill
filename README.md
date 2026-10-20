@@ -47,7 +47,7 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 | [**Deep_Learning_Notebooks**](https://github.com/19mddill/Deep_Learning_Notebooks) | Neural networks with Keras / TensorFlow (2 notebooks) | Fashion-MNIST test accuracy 87.3% · housing MLP test RMSE ≈ 0.54 · three hyperparameter-search strategies compared |
 | [**Kaggle_Notebooks**](https://github.com/19mddill/Kaggle_Notebooks) | Competition-style data prep | Titanic EDA and feature engineering (modeling still to come) |
 
-<details>
+
 <summary><b>🔬 Machine_Learning_Notebooks: all 9 notebooks in detail</b></summary>
 
 <br>
@@ -64,9 +64,9 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 | 8 | `Dimensionality_Reduction` | PCA by hand via SVD and with scikit-learn, choosing components by explained variance, PCA + Random Forest tuned jointly with `RandomizedSearchCV`, `IncrementalPCA` with memory-mapped arrays, Gaussian and sparse random projection (Johnson–Lindenstrauss bound, sparse matrix built by hand), manifold learning (LLE, MDS, Isomap, t-SNE) on a Swiss roll. | **154 of 784 components keep 95% of MNIST variance** · best tuned pipeline used 57 components (on a 1,000-sample subset) |
 | 9 | `unsupervised_learning` | K-Means and Mini-batch K-Means (elbow, silhouette), **color-quantization image segmentation**, **semi-supervised learning** (representative samples, label propagation), DBSCAN (+ k-NN on top for prediction), Gaussian Mixtures (covariance types, BIC/AIC, density-based **anomaly detection**), Bayesian Gaussian Mixtures. | Silhouette 0.627 on 5 blobs · digits accuracy: 50 random labels **75.8%** → 50 cluster representatives **81.9%** → label propagation **87.4%** |
 
-</details>
 
-<details>
+
+
 <summary><b> Deep_Learning_Notebooks: Keras / TensorFlow in detail</b></summary>
 
 <br>
@@ -105,9 +105,7 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 - On this tabular dataset, my tuned Random Forest (≈ $41k RMSE) beat the neural network (≈ $54k). The splits differ between the two notebooks, so this is a rough comparison, but it matches the common experience that tree ensembles are hard to beat on tabular data.
 - Tuned searches under a 10-epoch budget (best 86.8%) did not beat my hand-built 30-epoch baseline (87.5% validation), a reminder that training budget matters as much as search strategy.
 
-</details>
 
-<details>
 <summary><b> Kaggle_Notebooks: Titanic (in progress)</b></summary>
 
 <br>
@@ -117,7 +115,7 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 - **Stratified sampling on a composite key.**
 - Modeling and leaderboard submission are the next step.
 
-</details>
+
 
 *These notebooks are my worked-through study of Géron's book, with my own experiments added.*
 
