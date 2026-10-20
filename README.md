@@ -1,6 +1,6 @@
 # Hi, I'm Dilshad
 
-**Md. Dillshadul Islam** - CSE graduate (BUBT), GPA:3.9/4.0 - Bangladesh 🇧🇩
+**Md. Dillshadul Islam** - CSE graduate (BUBT), GPA: 3.9/4.0 - Bangladesh 🇧🇩
 
 I'm building toward a **remote junior Machine Learning Engineer** role. My strongest work so far is a computer-vision thesis on classifying autism-related behaviors from video, backed by a structured study of classical ML and deep learning, plus full-stack web projects I built before moving into ML.
 
