@@ -1,114 +1,134 @@
-# Hi, I'm Dilshad 
+# Machine Learning Notebooks
 
-**Md. Dillshadul Islam** · CSE graduate (BUBT) · Bangladesh 🇧🇩
+Hands-on implementations of the classical machine learning toolkit: linear models, SVMs, decision trees, ensembles, dimensionality reduction and unsupervised learning. Built with Python, NumPy, pandas and scikit-learn.
 
-I'm building toward a **remote junior Machine Learning Engineer** role. My strongest work so far is a computer-vision thesis on classifying autism-related behaviors from video, backed by a structured study of classical ML and deep learning, plus full-stack web projects I built before moving into ML.
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-orange)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626)
 
-[![Email](https://img.shields.io/badge/Email-mddillshadul98%40gmail.com-D14836?logo=gmail&logoColor=white)](mailto:mddillshadul98@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mddillshadul-islam-680707399)
+## About
 
----
+I'm **Md. Dillshadul Islam**, a CSE graduate (BUBT) based in Bangladesh, building toward a remote junior ML engineering role.
 
-##  Featured work
+This repository is my working record of studying *Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow* by Aurélien Géron (Chapters 1–9). I worked through each chapter in code, ran every experiment, and extended several of them with my own variations (listed below). The book's datasets and structure are the foundation. The notebooks show that I can implement, run and interpret these methods, not that I invented them.
 
-### [Pose-Based Autism Behavior Classification (Thesis)](https://github.com/19mddill/Autsim-Thesis)
-*Team thesis (5 members, BUBT). Full LaTeX book, slides, paper and Colab notebooks are in the repo.*
+## What this repo demonstrates
 
-Classifies five autism-related behaviors (hand flapping, finger clipping, head touching, spinning, tilting) from short video clips. We collected the clips ourselves at a special-needs school, with consent from the school and guardians.
+- **End-to-end ML workflow**: data exploration, stratified splitting, preprocessing pipelines, model comparison, hyperparameter search and final test evaluation (California Housing).
+- **Understanding beyond `.fit()`**: Normal Equation, SVD/least squares, Batch / Stochastic / Mini-batch Gradient Descent and Ridge regularization written in plain NumPy and checked against scikit-learn.
+- **Proper evaluation**: cross-validation, baselines (DummyClassifier), precision/recall trade-offs, ROC/AUC, confusion-matrix error analysis, learning curves, bias/variance diagnosis.
+- **Wide model coverage**: linear/logistic/softmax regression, SVM (linear, polynomial, RBF, SVR), decision trees, bagging, random forests, AdaBoost, gradient boosting, stacking.
+- **Unsupervised and semi-supervised learning**: PCA variants, manifold learning, K-Means, DBSCAN, Gaussian Mixtures, anomaly detection, label propagation.
 
-- **Pipeline:** OpenCV frames → MediaPipe Pose (33 landmarks, 99 features/frame) → fixed 30-frame sequences, with augmentation (temporal cropping, time warping, flipping) for class imbalance.
-- **Two modeling tracks:** statistical features for classical ML (Random Forest, Gradient Boosting, SVM, Logistic Regression, KNN, soft/hard voting), and raw sequences for deep learning (BiLSTM, BiGRU, CNN-BiLSTM) in TensorFlow/Keras.
-- **Evaluation:** 5-fold stratified CV, held-out test set (105 clips), per-class reports, confusion matrices, one-vs-rest ROC/AUC, loss curves, SHAP for interpretability.
+## Notebook index
 
-| Model | Test accuracy |
-|-------|---------------|
-| Random Forest / Hard-voting ensemble | **89.5%** |
-| Gradient Boosting (chosen classical baseline) | 86.7% |
-| CNN-BiLSTM (best deep model) | 84.8% |
+| # | Notebook | Book chapter | Topic |
+|---|----------|--------------|-------|
+| 1 | [`lifeSatisfaction.ipynb`](lifeSatisfaction.ipynb) | Ch. 1 | Model-based (linear regression) vs instance-based (k-NN) learning |
+| 2 | [`california_housing.ipynb`](california_housing.ipynb) | Ch. 2 | Full end-to-end regression project |
+| 3 | [`classfication.ipynb`](classfication.ipynb) | Ch. 3 | MNIST classification, metrics, error analysis |
+| 4 | [`linear_model_training_principles.ipynb`](linear_model_training_principles.ipynb) | Ch. 4 | How linear models are trained, regularization, logistic/softmax |
+| 5 | [`SVM.ipynb`](SVM.ipynb) | Ch. 5 | Support Vector Machines for classification and regression |
+| 6 | [`decision_trees.ipynb`](decision_trees.ipynb) | Ch. 6 | Decision trees, regularization, sensitivity to rotation |
+| 7 | [`ensemble_learning_and_random_forest.ipynb`](ensemble_learning_and_random_forest.ipynb) | Ch. 7 | Voting, bagging, random forests, boosting, stacking |
+| 8 | [`Dimensionality_Reduction.ipynb`](Dimensionality_Reduction.ipynb) | Ch. 8 | PCA, random projection, manifold learning |
+| 9 | [`unsupervised_learning.ipynb`](unsupervised_learning.ipynb) | Ch. 9 | Clustering, semi-supervised learning, Gaussian mixtures, anomaly detection |
 
-- **Honest findings:** hand flapping is the hardest class (it often co-occurs with finger clipping and spinning). ST-GCN and optical-flow + MobileNetV2 underperformed on a dataset this small (~300 clips).
-- **Scope:** a research prototype and decision-support idea, not a diagnostic tool.
+## Results at a glance
 
-### [Autism Screening Questionnaire App](https://github.com/19mddill/autism_in_toddlers)
-Full-stack ML app: a React questionnaire collects 26 screening inputs (Q-CHAT-style items, demographics, history), a **Flask** API serves a **Random Forest** model, and the result page shows the screening outcome.
-- Frontend: React 18, React Router, Axios, Bootstrap, JWT-based auth, deployed on GitHub Pages ([live demo](https://19mddill.github.io/autism_in_toddlers/)).
-- Backend: [`autism_in_toddler_backend`](https://github.com/19mddill/autism_in_toddler_backend) (Flask, scikit-learn, pandas, trained on a ~2,000-row dataset, served as a REST `/predict` endpoint on Render).
-- Screening aid only, not a diagnosis.
+| Task | Model / setup | Result |
+|------|---------------|--------|
+| California Housing (regression) | Linear regression, training RMSE | ≈ $68,973 (underfits) |
+| | Decision tree: training vs 10-fold CV RMSE | $0 vs ≈ $66,551 (clear overfit) |
+| | Random Forest + `RandomizedSearchCV` (3-fold CV RMSE) | ≈ $42,250 (best: 45 geo-clusters, `max_features=9`) |
+| | Final Random Forest on held-out test set | RMSE ≈ $41,446 |
+| MNIST "5 detector" | `DummyClassifier` baseline accuracy | 90.97% (shows why accuracy alone misleads) |
+| | SGD classifier: CV accuracy / ROC AUC | ≈ 95–96% / 0.960 |
+| | SGD at the 90%-precision threshold | recall drops to 48% |
+| | Random Forest at threshold 0.44 | precision 0.981, recall 0.906, F1 0.942 |
+| MNIST multilabel (≥7 and odd) | k-NN, macro F1 | 0.976 |
+| Moons classification | Voting (hard / soft), Bagging, Stacking test accuracy | 0.904 / 0.920, 0.920, 0.928 |
+| | Decision tree: unregularized vs `min_samples_leaf=5` | 90.1% vs 91.8% |
+| MNIST dimensionality | PCA components needed for 95% variance | 154 of 784 |
+| Semi-supervised digits | 50 labeled samples → 50 cluster representatives → label propagation | 75.8% → 81.9% → 87.4% |
+| Clustering | K-Means on 5 blobs: silhouette score | 0.627 |
 
----
+## Notebook details
 
-## Machine learning & deep learning study
+### 1. `lifeSatisfaction.ipynb`: Linear regression vs k-NN
+Fits `LinearRegression` and `KNeighborsRegressor(k=3)` on GDP-per-capita vs life-satisfaction data and compares predictions for the same new country (6.30 vs 6.33).
 
-| Repo | What's inside |
-|------|---------------|
-| [**Machine_Learning_Notebooks**](https://github.com/19mddill/Machine_Learning_Notebooks) | 9 notebooks following *Hands-On Machine Learning* (Géron), Ch. 1–9. An end-to-end California Housing project (best CV RMSE ≈ $42.3k, final test RMSE ≈ $41.4k), MNIST classification with threshold tuning and error analysis, Normal Equation and Batch/SGD/Mini-batch gradient descent **from scratch in NumPy**, SVMs, trees, ensembles (voting, bagging, boosting, stacking), PCA and manifold learning, K-Means, DBSCAN, Gaussian Mixtures, semi-supervised learning. |
-| [**Deep_Learning_Notebooks**](https://github.com/19mddill/Deep_Learning_Notebooks) | Perceptron → MLP → Keras: Fashion-MNIST classifier (**87.3% test accuracy**), regression MLP on California Housing (test RMSE ≈ 0.54), Wide & Deep with multiple inputs and auxiliary output, subclassing API, model saving, checkpoints/early-stopping callbacks, TensorBoard, **Keras Tuner** (random search, Hyperband, Bayesian optimization), He/Glorot initialization, LeakyReLU, **Batch Normalization**. |
-| [**Kaggle_Notebooks**](https://github.com/19mddill/Kaggle_Notebooks) | Titanic (in progress): EDA, title extraction from names, group-wise age imputation, fare capping, stratified sampling on a composite key. |
+### 2. `california_housing.ipynb`: End-to-end regression project
+- Exploratory analysis: histograms, geographic scatter plots, correlation matrix (median income is the strongest predictor, r ≈ 0.69).
+- Income-category **stratified split**, compared against a purely random split.
+- Feature engineering: rooms per house, bedroom ratio, people per house.
+- Preprocessing with `Pipeline` and `ColumnTransformer`: median imputation, scaling, log transforms, ratio features, one-hot encoding, and a KMeans-based geographic-similarity transformer.
+- Compared Linear Regression, Decision Tree and Random Forest using cross-validation, then tuned with `RandomizedSearchCV`.
+- Feature-importance analysis, plus **my own experiment**: dropping low-importance features and retraining. It gave no improvement (test RMSE ≈ 42.4k vs ≈ 41.4k with all features), so I kept the full feature set.
 
-*These notebooks are my worked-through study of the book, with my own experiments added. Each README states this.*
+### 3. `classfication.ipynb`: MNIST classification
+- Binary "5 detector" with SGD and Random Forest, evaluated with CV, confusion matrix, precision/recall curves, threshold selection and ROC/AUC.
+- Multiclass strategies: One-vs-Rest, One-vs-One, SVC, SGD with feature scaling.
+- **My own work**: a hand-built One-vs-One classifier (45 pairwise Random Forests with probability voting).
+- Error analysis with normalized and error-weighted confusion matrices; 3-vs-5 confusion study.
+- Multilabel (`KNeighborsClassifier`), `ClassifierChain`, and multioutput **image denoising** with k-NN.
 
----
+### 4. `linear_model_training_principles.ipynb`: Training principles
+- **Normal Equation**, **SVD / `lstsq`**, and **Batch, Stochastic and Mini-batch Gradient Descent** implemented from scratch in NumPy. All recover θ ≈ (4.21, 2.77) on synthetic data generated from (4, 3), matching scikit-learn.
+- Learning-rate and learning-schedule experiments; `SGDRegressor`, including `partial_fit`.
+- Polynomial regression, `PolynomialFeatures` feature expansion, learning curves (underfitting vs overfitting with a degree-10 model).
+- Regularization: Ridge (closed form, gradient descent and SGD), Lasso, Elastic Net with CV variants, early stopping.
+- Logistic regression and Softmax regression on Iris, including decision boundaries and class probabilities.
 
-## Full-stack web projects
+### 5. `SVM.ipynb`: Support Vector Machines
+Linear SVM with scaling, polynomial features + `LinearSVC`, polynomial kernel and Gaussian RBF kernel on the moons dataset (effect of `degree`, `coef0`, `gamma`, `C`), and SVM **regression** (`LinearSVR`, kernelized `SVR`, effect of ε and C).
 
-| Project | Stack | Highlights |
-|---------|-------|------------|
-| [**freelancebangla**](https://github.com/19mddill/freelancebangla) | React, Node/Express, MySQL, JWT, Nodemailer | Freelance marketplace with separate **client** and **worker** roles, role-based middleware, job posting and applications, email flow. |
-| [**ECOMMERCE-MERN**](https://github.com/19mddill/ECOMMERCE-MERN) | MongoDB, Express, React, Node | Auth with bcrypt + JWT, product/category/cart/order models, password-reset by email, **SSLCommerz** payment integration, admin dashboard. |
-| [**JWT-MultiUser-Authentication-API**](https://github.com/19mddill/JWT-MultiUser-Authentication-API) | Django REST Framework, JWT | Multi-role user API, tested with Postman. |
+### 6. `decision_trees.ipynb`: Decision trees
+Training and visualizing trees on Iris (Graphviz export, class probabilities), regularization with `max_depth` and `min_samples_leaf`, `DecisionTreeRegressor` on noisy quadratic data, and a PCA-rotation experiment on tree sensitivity to feature orientation.
 
----
+### 7. `ensemble_learning_and_random_forest.ipynb`: Ensembles
+Hard vs soft voting (with the soft-vote averaging worked through by hand for one sample), bagging with out-of-bag evaluation, Random Forest and feature importances (Iris, and a pixel-importance heatmap for MNIST), AdaBoost, Gradient Boosting **built manually by fitting trees to residuals**, `GradientBoostingRegressor` with early stopping (stopped at 102 trees), `HistGradientBoostingRegressor` on the housing data (CV RMSE ≈ $47.6k), and Stacking.
 
-## Problem solving
+### 8. `Dimensionality_Reduction.ipynb`: Dimensionality reduction
+PCA computed manually via SVD and with scikit-learn, choosing the number of components by explained variance (154 for 95% on MNIST), PCA + Random Forest tuned jointly with `RandomizedSearchCV`, `IncrementalPCA` with memory-mapped arrays, Gaussian and sparse random projection (Johnson–Lindenstrauss bound, sparse projection matrix built by hand), and manifold learning (LLE, MDS, Isomap, t-SNE) on a Swiss roll.
 
-- [**Data-structrues-and-Algorithm**](https://github.com/19mddill/Data-structrues-and-Algorithm): a 150-problem, pattern-based roadmap for ML-engineer interviews (arrays/hashing, two pointers, sliding window, stack, and more) with solutions in Python. In progress.
-- [**uvaProblems**](https://github.com/19mddill/uvaProblems): 60+ UVa solutions in C++ (data structures, graphs, number theory).
+### 9. `unsupervised_learning.ipynb`: Unsupervised learning
+K-Means and Mini-batch K-Means (inertia, elbow method, silhouette analysis), **image segmentation** by color quantization, **semi-supervised learning** (representative samples, label propagation, outlier filtering; 96.1% propagation accuracy on the retained samples), DBSCAN (plus a k-NN classifier on top and distance-based anomaly flagging), Gaussian Mixture Models (covariance types, sampling, density-based **anomaly detection**, BIC/AIC model selection) and Bayesian Gaussian Mixtures.
 
----
+## Skills and tools
 
-## Tech I use
+**Libraries:** NumPy, pandas, SciPy, scikit-learn, Matplotlib, Graphviz, Pillow
+**Practices:** reproducible splits (`random_state`), scikit-learn pipelines, cross-validation, hyperparameter search, metric selection for imbalanced problems, error analysis, regularization, reading learning curves
 
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white)
-![pandas](https://img.shields.io/badge/pandas-150458?logo=pandas&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white)
-![Keras](https://img.shields.io/badge/Keras-D00000?logo=keras&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?logo=opencv&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?logo=django&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?logo=cplusplus&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white)
-![Google Colab](https://img.shields.io/badge/Colab-F9AB00?logo=googlecolab&logoColor=white)
+**Not covered in this repo (yet):** neural networks / deep learning, NLP, model deployment.
 
-**ML focus:** supervised learning, model evaluation & tuning, pose-based video classification, sequence models (LSTM/GRU), ensembles, dimensionality reduction, clustering, explainability (SHAP).
+## Running the notebooks
 
----
+The notebooks were executed on Google Colab (Python 3.12). Each one can be opened there:
 
-## Education & certifications
+`https://colab.research.google.com/github/19mddill/Machine_Learning_Notebooks/blob/main/<notebook_name>.ipynb`
 
-- B.Sc. in Computer Science & Engineering, Bangladesh University of Business and Technology (BUBT)
-- Python for Everybody Specialization (University of Michigan, Coursera)
-- Web Applications for Everybody / Django Specialization (University of Michigan, Coursera)
-- Git & GitHub, HTML5, Object-Oriented Design (Coursera)
-- Back-end Development with Node.js, Express & MongoDB
-- Workforce Recovery Program (Coursera, via Bangladesh Computer Council)
+To run locally:
 
-Certificate files and verification links: [Certificates](https://github.com/19mddill/Certificates)
+```bash
+git clone https://github.com/19mddill/Machine_Learning_Notebooks.git
+cd Machine_Learning_Notebooks
+pip install numpy pandas scipy scikit-learn matplotlib pillow graphviz jupyter
+jupyter notebook
+```
 
----
+Notes:
+- MNIST (`fetch_openml`) and the California Housing data are downloaded on first run, so an internet connection is needed.
+- Rendering the trees in `decision_trees.ipynb` also needs the Graphviz system binary (`apt install graphviz` / `brew install graphviz`).
+- `unsupervised_learning.ipynb` loads `images/unsupervised_learning/ladybug.png`; place the image at that path before running the segmentation section.
+- A few cells (K-Means timing loop, MNIST random forests) take several minutes.
 
-## Right now
+## Credits
 
-- Working through *Hands-On Machine Learning*, now moving from classical ML into deep learning with Keras
-- Practicing data structures & algorithms for ML interviews
-- Open to **remote junior ML engineer** roles and ML/data projects
+Structure, datasets and many code patterns follow Aurélien Géron's *Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow* and its [companion code](https://github.com/ageron/handson-ml3). Experiments marked as "my own" above are my additions.
 
-## Let's talk
+## Contact
 
-[mddillshadul98@gmail.com](mailto:mddillshadul98@gmail.com) ·  [LinkedIn](https://www.linkedin.com/in/mddillshadul-islam-680707399)
+- GitHub: [@19mddill](https://github.com/19mddill)
+- LinkedIn: _add your link_
+- Email: _add your email_
