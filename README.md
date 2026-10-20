@@ -48,7 +48,7 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 | [**Kaggle_Notebooks**](https://github.com/19mddill/Kaggle_Notebooks) | Competition-style data prep | Titanic EDA and feature engineering (modeling still to come) |
 
 
-<summary><b>🔬 Machine_Learning_Notebooks: all 9 notebooks in detail</b></summary>
+<summary><b> Machine_Learning_Notebooks: all 9 notebooks in detail</b></summary>
 
 <br>
 
