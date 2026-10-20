@@ -1,6 +1,6 @@
 # Hi, I'm Dilshad
 
-**Md. Dillshadul Islam** - CSE graduate (BUBT) - GPA 3.9/4.0 - Bangladesh 🇧🇩
+**Md. Dillshadul Islam** - CSE graduate (BUBT), GPA:3.9/4.0 - Bangladesh 🇧🇩
 
 I'm building toward a **remote junior Machine Learning Engineer** role. My strongest work so far is a computer-vision thesis on classifying autism-related behaviors from video, backed by a structured study of classical ML and deep learning, plus full-stack web projects I built before moving into ML.
 
@@ -9,11 +9,10 @@ I'm building toward a **remote junior Machine Learning Engineer** role. My stron
 
 ---
 
-## Featured work
+##  Featured work
 
-### 🧠 [Pose-Based Autism Behavior Classification (Thesis)](https://github.com/19mddill/Autsim-Thesis)
+### [Pose-Based Autism Behavior Classification (Thesis)](https://github.com/19mddill/Autsim-Thesis)
 *Team thesis (5 members, BUBT). Full LaTeX book, slides, paper and Colab notebooks are in the repo.*
-*Ongoing thesis*
 
 Classifies five autism-related behaviors (hand flapping, finger clipping, head touching, spinning, tilting) from short video clips. We collected the clips ourselves at a special-needs school, with consent from the school and guardians.
 
@@ -30,7 +29,7 @@ Classifies five autism-related behaviors (hand flapping, finger clipping, head t
 - **Honest findings:** hand flapping is the hardest class (it often co-occurs with finger clipping and spinning). ST-GCN and optical-flow + MobileNetV2 underperformed on a dataset this small (~300 clips).
 - **Scope:** a research prototype and decision-support idea, not a diagnostic tool.
 
-### 🩺 [Autism Screening Questionnaire App](https://github.com/19mddill/autism_in_toddlers)
+### [Autism Screening Questionnaire App](https://github.com/19mddill/autism_in_toddlers)
 Full-stack ML app: a React questionnaire collects 26 screening inputs (Q-CHAT-style items, demographics, history), a **Flask** API serves a **Random Forest** model, and the result page shows the screening outcome.
 - Frontend: React 18, React Router, Axios, Bootstrap, JWT-based auth, deployed on GitHub Pages ([live demo](https://19mddill.github.io/autism_in_toddlers/)).
 - Backend: [`autism_in_toddler_backend`](https://github.com/19mddill/autism_in_toddler_backend) (Flask, scikit-learn, pandas, trained on a ~2,000-row dataset, served as a REST `/predict` endpoint on Render).
@@ -68,7 +67,7 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 </details>
 
 <details>
-<summary><b>Deep_Learning_Notebooks: Keras / TensorFlow in detail</b></summary>
+<summary><b> Deep_Learning_Notebooks: Keras / TensorFlow in detail</b></summary>
 
 <br>
 
@@ -109,7 +108,7 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 </details>
 
 <details>
-<summary><b>🏁 Kaggle_Notebooks: Titanic (in progress)</b></summary>
+<summary><b> Kaggle_Notebooks: Titanic (in progress)</b></summary>
 
 <br>
 
@@ -124,7 +123,7 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 
 ---
 
-## 🌐 Full-stack web projects
+## Full-stack web projects
 
 | Project | Stack | Highlights |
 |---------|-------|------------|
@@ -167,7 +166,7 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 
 ## Education & certifications
 
-- B.Sc. in Computer Science & Engineering,GPA: 3.9/4.0 Bangladesh University of Business and Technology (BUBT)
+- B.Sc. in Computer Science & Engineering, GPA: 3.9/4.0,Bangladesh University of Business and Technology (BUBT)
 - Python for Everybody Specialization (University of Michigan, Coursera)
 - Web Applications for Everybody / Django Specialization (University of Michigan, Coursera)
 - Git & GitHub, HTML5, Object-Oriented Design (Coursera)
@@ -178,12 +177,12 @@ Certificate files and verification links: [Certificates](https://github.com/19md
 
 ---
 
-##  Right now
+## Right now
 
 - Working through *Hands-On Machine Learning*, now moving from classical ML into deep learning with Keras
 - Practicing data structures & algorithms for ML interviews
 - Open to **remote junior ML engineer** roles and ML/data projects
 
-##  Let's talk
+## Let's talk
 
  [mddillshadul98@gmail.com](mailto:mddillshadul98@gmail.com) ·  [LinkedIn](https://www.linkedin.com/in/mddillshadul-islam-680707399)
