@@ -1,18 +1,18 @@
 # Hi, I'm Dilshad
 
-**Md. Dillshadul Islam** - CSE graduate (BUBT), GPA: 3.9/4.0 - Bangladesh 🇧🇩
+**Md. Dillshadul Islam** · CSE graduate (BUBT) GPA 3.9/4.0 · Bangladesh
 
-I'm building toward a **remote junior Machine Learning Engineer** role. My strongest work so far is a computer-vision thesis on classifying autism-related behaviors from video, backed by a structured study of classical ML and deep learning, plus full-stack web projects I built before moving into ML.
+I am currently working on training deep neural networks, and I am investigating my ongoing research on five specific behaviours in children with autism. I am digging further into the models and learning methods I used, and into better preprocessing of the behaviour-analysis data.
 
 [![Email](https://img.shields.io/badge/Email-mddillshadul98%40gmail.com-D14836?logo=gmail&logoColor=white)](mailto:mddillshadul98@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mddillshadul-islam-680707399)
 
 ---
 
-##  Featured work
+## Featured work
 
-### [Pose-Based Autism Behavior Classification (Thesis)](https://github.com/19mddill/Autsim-Thesis)
-*Team thesis (5 members, BUBT). Full LaTeX book, slides, paper and Colab notebooks are in the repo.*
+### [Pose-Based Autism Behavior Analysis (Thesis)](https://github.com/19mddill/Autsim-Thesis)
+*Team thesis (2 members, Bangladesh University of Business and Technology).*
 
 Classifies five autism-related behaviors (hand flapping, finger clipping, head touching, spinning, tilting) from short video clips. We collected the clips ourselves at a special-needs school, with consent from the school and guardians.
 
@@ -27,13 +27,8 @@ Classifies five autism-related behaviors (hand flapping, finger clipping, head t
 | CNN-BiLSTM (best deep model) | 84.8% |
 
 - **Honest findings:** hand flapping is the hardest class (it often co-occurs with finger clipping and spinning). ST-GCN and optical-flow + MobileNetV2 underperformed on a dataset this small (~300 clips).
-- **Scope:** a research prototype and decision-support idea, not a diagnostic tool.
+- **Scope:** a research prototype and decision-support idea, not a diagnostic tool. Currently Working on it.
 
-### [Autism Screening Questionnaire App](https://github.com/19mddill/autism_in_toddlers)
-Full-stack ML app: a React questionnaire collects 26 screening inputs (Q-CHAT-style items, demographics, history), a **Flask** API serves a **Random Forest** model, and the result page shows the screening outcome.
-- Frontend: React 18, React Router, Axios, Bootstrap, JWT-based auth, deployed on GitHub Pages ([live demo](https://19mddill.github.io/autism_in_toddlers/)).
-- Backend: [`autism_in_toddler_backend`](https://github.com/19mddill/autism_in_toddler_backend) (Flask, scikit-learn, pandas, trained on a ~2,000-row dataset, served as a REST `/predict` endpoint on Render).
-- Screening aid only, not a diagnosis.
 
 ---
 
@@ -47,8 +42,8 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 | [**Deep_Learning_Notebooks**](https://github.com/19mddill/Deep_Learning_Notebooks) | Neural networks with Keras / TensorFlow (2 notebooks) | Fashion-MNIST test accuracy 87.3% · housing MLP test RMSE ≈ 0.54 · three hyperparameter-search strategies compared |
 | [**Kaggle_Notebooks**](https://github.com/19mddill/Kaggle_Notebooks) | Competition-style data prep | Titanic EDA and feature engineering (modeling still to come) |
 
-
-<summary><b> Machine_Learning_Notebooks: all 9 notebooks in detail</b></summary>
+<details>
+<summary><b>Machine_Learning_Notebooks: all 9 notebooks in detail</b></summary>
 
 <br>
 
@@ -64,10 +59,10 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 | 8 | `Dimensionality_Reduction` | PCA by hand via SVD and with scikit-learn, choosing components by explained variance, PCA + Random Forest tuned jointly with `RandomizedSearchCV`, `IncrementalPCA` with memory-mapped arrays, Gaussian and sparse random projection (Johnson–Lindenstrauss bound, sparse matrix built by hand), manifold learning (LLE, MDS, Isomap, t-SNE) on a Swiss roll. | **154 of 784 components keep 95% of MNIST variance** · best tuned pipeline used 57 components (on a 1,000-sample subset) |
 | 9 | `unsupervised_learning` | K-Means and Mini-batch K-Means (elbow, silhouette), **color-quantization image segmentation**, **semi-supervised learning** (representative samples, label propagation), DBSCAN (+ k-NN on top for prediction), Gaussian Mixtures (covariance types, BIC/AIC, density-based **anomaly detection**), Bayesian Gaussian Mixtures. | Silhouette 0.627 on 5 blobs · digits accuracy: 50 random labels **75.8%** → 50 cluster representatives **81.9%** → label propagation **87.4%** |
 
+</details>
 
-
-
-<summary><b> Deep_Learning_Notebooks: Keras / TensorFlow in detail</b></summary>
+<details>
+<summary><b>Deep_Learning_Notebooks: Keras / TensorFlow in detail</b></summary>
 
 <br>
 
@@ -105,8 +100,10 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 - On this tabular dataset, my tuned Random Forest (≈ $41k RMSE) beat the neural network (≈ $54k). The splits differ between the two notebooks, so this is a rough comparison, but it matches the common experience that tree ensembles are hard to beat on tabular data.
 - Tuned searches under a 10-epoch budget (best 86.8%) did not beat my hand-built 30-epoch baseline (87.5% validation), a reminder that training budget matters as much as search strategy.
 
+</details>
 
-<summary><b> Kaggle_Notebooks: Titanic (in progress)</b></summary>
+<details>
+<summary><b>Kaggle_Notebooks: Titanic (in progress)</b></summary>
 
 <br>
 
@@ -115,7 +112,62 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 - **Stratified sampling on a composite key.**
 - Modeling and leaderboard submission are the next step.
 
+</details>
 
+## Papers I read
+
+Original papers behind the techniques I used in the notebooks above, in chronological order. Each title links to the paper.
+
+- [A Logical Calculus of the Ideas Immanent in Nervous Activity](https://doi.org/10.1007/BF02478259) · McCulloch, Pitts (1943)
+- [The Perceptron: A Perceiving and Recognizing Automaton](https://scholar.google.com/scholar?q=The+Perceptron%3A+A+Perceiving+and+Recognizing+Automaton+Rosenblatt) · Rosenblatt (1957)
+- [Some Methods of Speeding Up the Convergence of Iteration Methods](https://scholar.google.com/scholar?q=Some+Methods+of+Speeding+Up+the+Convergence+of+Iteration+Methods+Polyak) · Polyak (1964)
+- [Least Squares Quantization in PCM (written 1957)](https://scholar.google.com/scholar?q=Least+Squares+Quantization+in+PCM+Lloyd) · Lloyd (1982)
+- [A Method for Solving the Convex Programming Problem with Convergence Rate O(1/k^2)](https://scholar.google.com/scholar?q=A+Method+for+Solving+the+Convex+Programming+Problem+with+Convergence+Rate+O%281%2Fk%5E2%29+Nesterov) · Nesterov (1983)
+- [Learning Representations by Back-Propagating Errors](https://www.nature.com/articles/323533a0) · Rumelhart, Hinton, Williams (1986)
+- [Stacked Generalization](https://doi.org/10.1016/S0893-6080(05)80023-1) · Wolpert (1992)
+- [Bagging Predictors](https://doi.org/10.1007/BF00058655) · Breiman (1996)
+- [The Lack of A Priori Distinctions Between Learning Algorithms](https://scholar.google.com/scholar?q=The+Lack+of+A+Priori+Distinctions+Between+Learning+Algorithms+Wolpert) · Wolpert (1996)
+- [A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise](https://scholar.google.com/scholar?q=A+Density-Based+Algorithm+for+Discovering+Clusters+in+Large+Spatial+Databases+with+Noise+Ester) · Ester, Kriegel, Sander, Xu (1996)
+- [A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting](https://doi.org/10.1006/jcss.1997.1504) · Freund, Schapire (1997)
+- [The Random Subspace Method for Constructing Decision Forests](https://scholar.google.com/scholar?q=The+Random+Subspace+Method+for+Constructing+Decision+Forests+Ho) · Ho (1998)
+- [Efficient BackProp](https://scholar.google.com/scholar?q=Efficient+BackProp+LeCun) · LeCun, Bottou, Orr, Müller (1998)
+- [Nonlinear Component Analysis as a Kernel Eigenvalue Problem](https://scholar.google.com/scholar?q=Nonlinear+Component+Analysis+as+a+Kernel+Eigenvalue+Problem+Sch%C3%B6lkopf) · Schölkopf, Smola, Müller (1998)
+- [Pasting Small Votes for Classification in Large Databases and On-Line](https://scholar.google.com/scholar?q=Pasting+Small+Votes+for+Classification+in+Large+Databases+and+On-Line+Breiman) · Breiman (1999)
+- [Nonlinear Dimensionality Reduction by Locally Linear Embedding](https://doi.org/10.1126/science.290.5500.2323) · Roweis, Saul (2000)
+- [A Global Geometric Framework for Nonlinear Dimensionality Reduction](https://doi.org/10.1126/science.290.5500.2319) · Tenenbaum, de Silva, Langford (2000)
+- [Scaling to Very Very Large Corpora for Natural Language Disambiguation](https://scholar.google.com/scholar?q=Scaling+to+Very+Very+Large+Corpora+for+Natural+Language+Disambiguation+Banko) · Banko, Brill (2001)
+- [Using the Triangle Inequality to Accelerate k-Means](https://scholar.google.com/scholar?q=Using+the+Triangle+Inequality+to+Accelerate+k-Means+Elkan) · Elkan (2003)
+- [A Fast Learning Algorithm for Deep Belief Nets](https://www.cs.toronto.edu/~hinton/absps/fastnc.pdf) · Hinton, Osindero, Teh (2006)
+- [Extremely Randomized Trees](https://scholar.google.com/scholar?q=Extremely+Randomized+Trees+Geurts) · Geurts, Ernst, Wehenkel (2006)
+- [Greedy Layer-Wise Training of Deep Networks](https://scholar.google.com/scholar?q=Greedy+Layer-Wise+Training+of+Deep+Networks+Bengio) · Bengio, Lamblin, Popovici, Larochelle (2007)
+- [k-means++: The Advantages of Careful Seeding](https://scholar.google.com/scholar?q=k-means%2B%2B%3A+The+Advantages+of+Careful+Seeding+Arthur) · Arthur, Vassilvitskii (2007)
+- [Visualizing Data using t-SNE](https://jmlr.org/papers/v9/vandermaaten08a.html) · van der Maaten, Hinton (2008)
+- [The Unreasonable Effectiveness of Data](https://scholar.google.com/scholar?q=The+Unreasonable+Effectiveness+of+Data+Halevy) · Halevy, Norvig, Pereira (2009)
+- [Multi-Class AdaBoost](https://scholar.google.com/scholar?q=Multi-Class+AdaBoost+Zhu) · Zhu, Zou, Rosset, Hastie (2009)
+- [Understanding the Difficulty of Training Deep Feedforward Neural Networks](http://proceedings.mlr.press/v9/glorot10a.html) · Glorot, Bengio (2010)
+- [Web-Scale K-Means Clustering](https://scholar.google.com/scholar?q=Web-Scale+K-Means+Clustering+Sculley) · Sculley (2010)
+- [Adaptive Subgradient Methods for Online Learning and Stochastic Optimization](https://jmlr.org/papers/v12/duchi11a.html) · Duchi, Hazan, Singer (2011)
+- [Improving Neural Networks by Preventing Co-adaptation of Feature Detectors](https://arxiv.org/abs/1207.0580) · Hinton et al. (2012)
+- [Ensembles on Random Patches](https://scholar.google.com/scholar?q=Ensembles+on+Random+Patches+Louppe) · Louppe, Geurts (2012)
+- [On the Difficulty of Training Recurrent Neural Networks](https://arxiv.org/abs/1211.5063) · Pascanu, Mikolov, Bengio (2013)
+- [An Empirical Study of Learning Rates in Deep Neural Networks for Speech Recognition](https://scholar.google.com/scholar?q=An+Empirical+Study+of+Learning+Rates+in+Deep+Neural+Networks+for+Speech+Recognition+Senior) · Senior, Heigold, Ranzato, Yang (2013)
+- [Dropout: A Simple Way to Prevent Neural Networks from Overfitting](https://jmlr.org/papers/v15/srivastava14a.html) · Srivastava et al. (2014)
+- [Adam: A Method for Stochastic Optimization](https://arxiv.org/abs/1412.6980) · Kingma, Ba (2014)
+- [Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification](https://arxiv.org/abs/1502.01852) · He, Zhang, Ren, Sun (2015)
+- [Empirical Evaluation of Rectified Activations in Convolutional Network](https://arxiv.org/abs/1505.00853) · Xu, Wang, Chen, Li (2015)
+- [Fast and Accurate Deep Network Learning by Exponential Linear Units (ELUs)](https://arxiv.org/abs/1511.07289) · Clevert, Unterthiner, Hochreiter (2015)
+- [Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](https://arxiv.org/abs/1502.03167) · Ioffe, Szegedy (2015)
+- [Gaussian Error Linear Units (GELUs)](https://arxiv.org/abs/1606.08415) · Hendrycks, Gimpel (2016)
+- [Wide & Deep Learning for Recommender Systems](https://arxiv.org/abs/1606.07792) · Cheng et al. (2016)
+- [Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization](https://arxiv.org/abs/1603.06560) · Li et al. (2016)
+- [XGBoost: A Scalable Tree Boosting System](https://arxiv.org/abs/1603.02754) · Chen, Guestrin (2016)
+- [Dropout as a Bayesian Approximation](https://arxiv.org/abs/1506.02142) · Gal, Ghahramani (2016)
+- [Self-Normalizing Neural Networks](https://arxiv.org/abs/1706.02515) · Klambauer et al. (2017)
+- [Searching for Activation Functions](https://arxiv.org/abs/1710.05941) · Ramachandran, Zoph, Le (2017)
+- [Decoupled Weight Decay Regularization](https://arxiv.org/abs/1711.05101) · Loshchilov, Hutter (2017)
+- [The Marginal Value of Adaptive Gradient Methods in Machine Learning](https://arxiv.org/abs/1705.08292) · Wilson et al. (2017)
+- [A Disciplined Approach to Neural Network Hyper-Parameters: Part 1](https://arxiv.org/abs/1803.09820) · Smith (2018)
+- [Mish: A Self Regularized Non-Monotonic Activation Function](https://arxiv.org/abs/1908.08681) · Misra (2019)
 
 *These notebooks are my worked-through study of Géron's book, with my own experiments added.*
 
@@ -164,7 +216,7 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 
 ## Education & certifications
 
-- B.Sc. in Computer Science & Engineering, GPA: 3.9/4.0,Bangladesh University of Business and Technology (BUBT)
+- B.Sc. in Computer Science & Engineering, Bangladesh University of Business and Technology (BUBT)
 - Python for Everybody Specialization (University of Michigan, Coursera)
 - Web Applications for Everybody / Django Specialization (University of Michigan, Coursera)
 - Git & GitHub, HTML5, Object-Oriented Design (Coursera)
@@ -174,13 +226,3 @@ A structured, code-first study of *Hands-On Machine Learning* (Géron). I ran ev
 Certificate files and verification links: [Certificates](https://github.com/19mddill/Certificates)
 
 ---
-
-## Right now
-
-- Working through *Hands-On Machine Learning*, now moving from classical ML into deep learning with Keras
-- Practicing data structures & algorithms for ML interviews
-- Open to **remote junior ML engineer** roles and ML/data projects
-
-## Let's talk
-
- [mddillshadul98@gmail.com](mailto:mddillshadul98@gmail.com) ·  [LinkedIn](https://www.linkedin.com/in/mddillshadul-islam-680707399)
