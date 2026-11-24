@@ -168,6 +168,7 @@ Original papers behind the techniques I used in the notebooks above, in chronolo
 - [The Marginal Value of Adaptive Gradient Methods in Machine Learning](https://arxiv.org/abs/1705.08292) · Wilson et al. (2017)
 - [A Disciplined Approach to Neural Network Hyper-Parameters: Part 1](https://arxiv.org/abs/1803.09820) · Smith (2018)
 - [Mish: A Self Regularized Non-Monotonic Activation Function](https://arxiv.org/abs/1908.08681) · Misra (2019)
+- [Some Methods of Speeding Up the Convergence of Iteration Methods](https://doi.org/10.1016/0041-5553(64)90137-5) · Polyak (1964)
 
 *These notebooks are my worked-through study of Géron's book, with my own experiments added.*
 
